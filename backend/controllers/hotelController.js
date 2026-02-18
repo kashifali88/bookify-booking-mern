@@ -1,13 +1,12 @@
 import Hotel from '../models/Hotel.js'
 import Room from '../models/Room.js'
-
-
+ 
 
 export const createHotel = async(req,res,next) => {
     const newHotel = await Hotel(req.body)
     try {
          newHotel.save()
-        res.status(200).json('Hotel created')
+        res.status(200).json('Hotel created')  
     } catch (error) {
         next(error)
     }
