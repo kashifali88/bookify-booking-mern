@@ -45,9 +45,9 @@ server.use((err, req, res, next) => {
     })
 })
 
-
-server.listen(8080, ()=> {
-    console.log('connected to backend');
+const PORT = process.env.PORT || 5000
+server.listen(PORT, ()=> {
+    console.log(`connected to backend on port ${PORT}`);
     connect()
     
 })
