@@ -5,6 +5,7 @@ import axios from 'axios'
 import { useNavigate } from 'react-router-dom'
 
 const Login = () => {
+    const API = import.meta.env.VITE_BACKEND_URL;
    
 
     const [credential, setCredential] = useState({
@@ -22,7 +23,7 @@ const Login = () => {
         e.preventDefault()
         dispatch({type: "LOGIN_START"})
         try {
-            const res = await axios.post('/api/auth/login', credential)
+            const res = await axios.post(`${API}/auth/login`, credential)
             dispatch({type: 'LOGIN_SUCCESS', payload: res.data})
             navigate('/')
 

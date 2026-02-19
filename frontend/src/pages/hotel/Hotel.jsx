@@ -14,10 +14,11 @@ import Reserve from '../../components/reserve/Reserve.jsx'
 
 
 const Hotel = () => {
+      const API = import.meta.env.VITE_BACKEND_URL;
   const location = useLocation()
   const navigate = useNavigate()
   const { id } = useParams()
-  const { data, loading, error, reFetch } = useFetch(`/api/hotels/find/${id}`)
+  const { data, loading, error, reFetch } = useFetch(`${API}/hotels/find/${id}`)
   const { dates, options } = useContext(SearchContext)
   const [slideNumber, setSlideNumber] = useState(0);
   const [open, setOpen] = useState(false);

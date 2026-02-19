@@ -1,8 +1,9 @@
 import useFetch from '../hooks/UseFetch'
 import './feature.css'
 const Featured = () => {
-    const { data, loading, error }  = useFetch('/api/hotels/countByCity?cities=seaul,islamabad,london')
-    
+    const API = import.meta.env.VITE_BACKEND_URL;
+    const { data, loading, error }  = useFetch(`${API}/hotels/countByCity?cities=seaul,islamabad,london`)
+
 
 
     
