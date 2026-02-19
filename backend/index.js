@@ -11,7 +11,7 @@ dotenv.config()
 const server = express()
 
 server.use(cors({
-    origin: "https://bookify-booking-mern-frontend.onrender.com",
+    origin: "https://bookify-booking-estate.onrender.com",
     credentials: true,
 }))
 
