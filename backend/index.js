@@ -9,10 +9,10 @@ import cookieParser from 'cookie-parser'
 dotenv.config()
 const server = express()
 
-server.cors({
-    origin: "https://bookify-booking-mern-frontend.onrender.com/",
-    Credential: true,
-})
+server.use(cors({
+    origin: "https://bookify-booking-mern-frontend.onrender.com",
+    credentials: true,
+}))
 
 
 const connect = async() => {
