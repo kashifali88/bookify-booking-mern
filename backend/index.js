@@ -31,6 +31,10 @@ server.use('/api/auth',authRouter)
 server.use('/api/users',usersRouter)
 server.use('/api/hotels',hotelsRouter)
 server.use('/api/rooms',roomsRouter)
+server.get('/', (req, res) => {
+  res.send('Bookify Backend is Live 🚀');
+});
+
 
 // error handling middleware
 server.use((err, req, res, next) => {
