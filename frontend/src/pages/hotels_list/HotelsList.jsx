@@ -19,8 +19,8 @@ const List = () => {
   const [max, setMax] = useState(undefined);
   const { dispatch } = useContext(SearchContext);
 
-
-  const { data, loading, error, refetch } = useFetch(`api/hotels?city=${destination}&min=${min || 0}&max=${max || 999}`)
+const API = import.meta.env.VITE_BACKEND_URL;
+  const { data, loading, error, refetch } = useFetch(`${API}/api/hotels?city=${destination}&min=${min || 0}&max=${max || 999}`)
   const handleClick = () =>{
     refetch()
   }
