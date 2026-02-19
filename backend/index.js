@@ -6,6 +6,7 @@ import hotelsRouter from './routes/hotels.js'
 import usersRouter from './routes/users.js'
 import roomsRouter from './routes/rooms.js'
 import cookieParser from 'cookie-parser'
+import cors from 'cors'
 dotenv.config()
 const server = express()
 
