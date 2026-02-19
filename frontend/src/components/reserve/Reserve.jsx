@@ -10,7 +10,7 @@ import { useNavigate } from 'react-router-dom'
 const Reserve = ({ setOpen, hotelId }) => {
         const API = import.meta.env.VITE_BACKEND_URL;
 
-    const { data, loading, error, dispatch } = useFetch(`${API}/api/hotels/room/${hotelId}`)
+    const { data, loading, error, dispatch } = useFetch(`${API}/hotels/room/${hotelId}`)
     const [selectedRooms, setSelectedRooms] = useState([])
     const { dates } = useContext(SearchContext)
     const navigate = useNavigate()
@@ -49,7 +49,7 @@ const Reserve = ({ setOpen, hotelId }) => {
         try {
             await Promise.all(
                 selectedRooms.map(async (roomId) => {
-                    const res = await axios.put(`${API}/api/rooms/availability/${roomId}`, { dates: allDates });
+                    const res = await axios.put(`${API}/rooms/availability/${roomId}`, { dates: allDates });
                     console.log(res.data);
                     return res.data;
                 })

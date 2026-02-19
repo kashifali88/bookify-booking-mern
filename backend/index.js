@@ -34,10 +34,10 @@ const connect = async() => {
 server.use(express.json())
 server.use(cookieParser())
 
-server.use('/api/auth',authRouter)
-server.use('/api/users',usersRouter)
-server.use('/api/hotels',hotelsRouter)
-server.use('/api/rooms',roomsRouter)
+server.use('/auth',authRouter)
+server.use('/users',usersRouter)
+server.use('/hotels',hotelsRouter)
+server.use('/rooms',roomsRouter)
 server.get('/', (req, res) => {
   res.send('Bookify Backend is Live 🚀');
 });
