@@ -4,7 +4,7 @@ import './propertylist.css'
 const PropertyList = () => {
         const API = import.meta.env.VITE_BACKEND_URL;
 
-    const { data, loading, error }  = useFetch(`${API}/hotels/countByType`)
+    const { data, loading, error }  = useFetch(`${API}/api/hotels/countByType`)
     const images = [
         "https://www.bing.com/th/id/OIP.mMBkK4uFwZdwW8SFHKeiMwHaE8?w=272&h=211&c=8&rs=1&qlt=90&o=6&pid=3.1&rm=2",
         "https://tse4.mm.bing.net/th/id/OIP.PTGaLOO5hU_FRYg4V2xdugHaGj?rs=1&pid=ImgDetMain&o=7&rm=3",
